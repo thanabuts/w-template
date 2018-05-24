@@ -1,55 +1,66 @@
-$primaryBackgroundColor : #FBFBFB;
-$secondBackgroundColor : #FFFFFF;
-$footerBackgroundColor : #FFFFFF;
-$fontColour : #333333;
-$fontLinkColour : #7f7f7f;
-$fontLinkHoverColour : #444444;
-$fontFooterColour : #959595;
+$primaryBackgroundColor: #FBFBFB;
+$secondBackgroundColor: #FFFFFF;
+$footerBackgroundColor: #FFFFFF;
+$fontColour: #333333;
+$fontLinkColour: #7f7f7f;
+$fontLinkHoverColour: #444444;
+$fontFooterColour: #959595;
+$paginationBorderColour: #DEE2E6;
 
-body{
+%none-radius {
+  border-radius: 0;
+}
+
+body {
   background-color: $secondBackgroundColor;
   font-family: 'Roboto', 'Helvetica Neue', sans-serif;
   color: $fontColour;
   font-size: 16px;
 }
 
-a{
+a {
   color: $fontLinkColour;
   text-decoration: none;
-  &:hover{
+
+  &:hover {
     color: $fontLinkHoverColour;
     text-decoration: none;
   }
 }
 
 ::selection {
-    color: $secondBackgroundColor;
-    background: $fontColour;
+  color: $secondBackgroundColor;
+  background: $fontColour;
 }
 
-header#sidebar{
+header#sidebar {
   width: 25%;
   height: 100%;
   position: fixed;
   background-color: $primaryBackgroundColor;
-  nav.navbar{
+
+  nav.navbar {
     flex-flow: wrap;
-    h1.website-name{
+
+    h1.website-name {
       font-size: 1em;
       text-transform: uppercase;
-      letter-spacing: .15em;
+      letter-spacing: 0.15em;
       padding: 8em 20% 0 35%;
       margin: 0;
     }
-    ul.navbar-nav{
-      padding: .8em 20% 0 35%;
+
+    ul.navbar-nav {
+      padding: 0.8em 20% 0 35%;
       flex-direction: column;
-      li.nav-item{
-        a.nav-link{
+
+      li.nav-item {
+        a.nav-link {
           display: block;
-          padding: .5em 0 !important;
-          font-size: .9em;
-          &.active{
+          padding: 0.5em 0 !important;
+          font-size: 0.9em;
+
+          &.active {
             color: $fontLinkHoverColour !important;
           }
         }
@@ -58,122 +69,267 @@ header#sidebar{
   }
 }
 
-p.text{
-  font-size: .9em;
+p.text {
+  font-size: 0.9em;
 }
 
-main#wrapper{
-    width: 75%;
-    float: right;
-    display: block;
-    background: $secondBackgroundColor;
-    margin-top: 6.8em;
+hr.split {
+  width: 40%;
+  margin: 1.5em auto;
+  border-top: 1px solid rgba(0,0,0,.1);
 }
 
-section#introduction{
+ul.pagination {
+  @extend %none-radius;
+  margin-top: 2.5em;
+  float: right;
+
+  li.page-item {
+    &:first-child {
+      a.page-link {
+        @extend %none-radius;
+      }
+    }
+    &:last-child {
+      a.page-link {
+        @extend %none-radius;
+      }
+    }
+    &.disabled{
+      a.page-link{
+        color: $fontFooterColour;
+      }
+    }
+    &.active{
+      a.page-link,
+      a.page-link:hover{
+        background-color: $fontLinkHoverColour;
+        border-color: $paginationBorderColour;
+        color: $secondBackgroundColor;
+      }
+    }
+    a.page-link{
+      &:hover{
+        background-color: $secondBackgroundColor;
+        border-color: $paginationBorderColour;
+        color: $fontLinkHoverColour;
+      }
+      background-color: $secondBackgroundColor;
+      border-color: $paginationBorderColour;
+      color: $fontLinkColour;
+    }
+  }
+}
+
+main#wrapper {
+  width: 75%;
+  float: right;
+  display: block;
+  background: $secondBackgroundColor;
+  margin-top: 6.8em;
+}
+
+section#introduction {
   position: relative;
   margin-bottom: 2em;
-  img.profile{
+
+  img.profile {
     position: absolute;
     z-index: 1;
   }
-  div.topic{
+
+  div.topic {
     text-align: right;
-    h2.introduce{
+
+    h2.introduce {
       float: right;
       text-transform: uppercase;
       width: 6em;
       font-size: 2em;
-      margin-bottom: .6em;
+      margin-bottom: 0.6em;
     }
   }
-  div.box{
+
+  div.box {
     background-color: $primaryBackgroundColor;
     padding: 2em;
   }
 }
 
-footer#copyright{
-    width: 75%;
-    float: right;
-    display: block;
-    background-color: $footerBackgroundColor;
-    color: $fontFooterColour;
-    border-top: 1px solid rgba(0,0,0,.1);
-    box-shadow: 0 -1px 1px rgba(255,255,255,.5);
-    text-shadow: 0 1px 0 rgba(255,255,255,.8);
-    padding: 1.2em 0;
-    margin-top: 6.8em;
-    font-size: .9em;
+section#blog {
+  h2.blog {
     text-align: center;
-}
+    text-transform: uppercase;
+    font-size: 2em;
 
-@media screen and (max-width: 991px) {
-  header#sidebar{
-    nav.navbar{
-      h1.website-name{
-        padding: 8em 0 0 16%;
+    span {
+      font-size: 0.5em;
+      padding: 0 0.2em;
+    }
+  }
+
+  p.description {
+    margin: 1.2em 0;
+    text-align: center;
+    font-size: 0.8em;
+    color: $fontFooterColour;
+  }
+
+  div.category {
+    text-align: center;
+    margin-bottom: 2em;
+
+    a.category-btn {
+      background-color: $primaryBackgroundColor;
+      padding: 0.4em 1em;
+      margin: 0.5em;
+      display: inline-block;
+      font-size: 0.8em;
+
+      &.active {
+        background-color: $fontColour;
+        color: $primaryBackgroundColor;
       }
-      ul.navbar-nav{
-        padding: .8em 0 0 16%;
+    }
+  }
+
+  div.card {
+    @extend %none-radius;
+    margin: 1em 0;
+
+    h5.card-title {
+      font-size: 0.9em;
+    }
+
+    p.card-text {
+      color: $fontLinkColour;
+      font-size: 0.8em;
+    }
+
+    img.card-img-top {
+      @extend %none-radius;
+    }
+
+    div.card-footer {
+      background-color: $primaryBackgroundColor;
+
+      small.text-muted {
+        color: $fontLinkColour;
+        font-size: 0.8em;
       }
     }
   }
 }
 
+footer#copyright {
+  width: 75%;
+  float: right;
+  display: block;
+  background-color: $footerBackgroundColor;
+  color: $fontFooterColour;
+  border-top: 1px solid rgba(0,0,0,.1);
+  box-shadow: 0 -1px 1px rgba(255,255,255,.5);
+  text-shadow: 0 1px 0 rgba(255,255,255,.8);
+  padding: 1.2em 0;
+  margin-top: 6.8em;
+  font-size: 0.9em;
+  text-align: center;
+}
+@media screen and (max-width: 991px) {
+  header#sidebar {
+    nav.navbar {
+      h1.website-name {
+        padding: 8em 0 0 16%;
+      }
+
+      ul.navbar-nav {
+        padding: 0.8em 0 0 16%;
+      }
+    }
+  }
+
+  section#blog {
+    div.category {
+      margin-bottom: 1.2em;
+    }
+  }
+}
 @media screen and (max-width: 767px) {
-  %fullWidth{
+  %fullWidth {
     width: 100%;
     float: none;
   }
-  header#sidebar{
+
+  header#sidebar {
     position: relative;
     width: 100%;
     height: auto;
     padding: 1em;
-    h1.website-name{
+
+    h1.website-name {
       font-size: 1.2em !important;
       padding: 0 !important;
     }
-    ul.navbar-nav{
-      padding: .8em 0 !important;
-      li.nav-item{
+
+    ul.navbar-nav {
+      padding: 0.8em 0 !important;
+
+      li.nav-item {
         border-top: 1px solid rgba(0,0,0,.1);
-        &:first-child{
+
+        &:first-child {
           border-top: 0;
         }
-        a.nav-link{
-          padding: .6em 0 !important;
+
+        a.nav-link {
+          padding: 0.6em 0 !important;
           font-size: 1em !important;
         }
       }
     }
   }
-  main#wrapper{
-      @extend %fullWidth;
-      padding-top: 2em;
-      margin-top: 0;
+
+  main#wrapper {
+    @extend %fullWidth;
+    padding-top: 2em;
+    margin-top: 0;
   }
-  section#introduction{
+
+  section#introduction {
     margin-bottom: 0;
-    img.profile{
+
+    img.profile {
       position: relative;
       margin-bottom: 2em;
     }
-    div.topic{
+
+    div.topic {
       text-align: left;
-      h2.introduce{
+
+      h2.introduce {
         width: 100%;
         font-size: 1.4em;
       }
     }
-    div.box{
+
+    div.box {
       background-color: $secondBackgroundColor;
       padding: 1em 0;
     }
   }
-  footer#copyright{
-      margin-top: 2em;
-      @extend %fullWidth;
+
+  section#blog {
+    div.category {
+      margin-bottom: 0;
+    }
+
+    div.card {
+      margin: 1.5em;
+    }
+  }
+
+  footer#copyright {
+    margin-top: 2em;
+    @extend %fullWidth;
   }
 }
