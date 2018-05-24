@@ -90,26 +90,30 @@ ul.pagination {
         @extend %none-radius;
       }
     }
+
     &:last-child {
       a.page-link {
         @extend %none-radius;
       }
     }
-    &.disabled{
-      a.page-link{
+
+    &.disabled {
+      a.page-link {
         color: $fontFooterColour;
       }
     }
-    &.active{
+
+    &.active {
       a.page-link,
-      a.page-link:hover{
+      a.page-link:hover {
         background-color: $fontLinkHoverColour;
         border-color: $paginationBorderColour;
         color: $secondBackgroundColor;
       }
     }
-    a.page-link{
-      &:hover{
+
+    a.page-link {
+      &:hover {
         background-color: $secondBackgroundColor;
         border-color: $paginationBorderColour;
         color: $fontLinkHoverColour;
@@ -236,6 +240,12 @@ footer#copyright {
   text-align: center;
 }
 @media screen and (max-width: 991px) {
+  %forceFullWidth {
+    flex: 0 0 83.333333%;
+    max-width: 83.333333%;
+    margin-left: 8.333333%;
+  }
+
   header#sidebar {
     nav.navbar {
       h1.website-name {
@@ -245,6 +255,33 @@ footer#copyright {
       ul.navbar-nav {
         padding: 0.8em 0 0 16%;
       }
+    }
+  }
+
+  section#introduction {
+    margin-top: -4rem;
+
+    img.profile {
+      position: relative;
+      margin-bottom: 2em;
+    }
+
+    div.topic {
+      @extend %forceFullWidth;
+      text-align: left;
+
+      h2.introduce {
+        width: 100%;
+      }
+    }
+
+    div.profile {
+      @extend %forceFullWidth;
+    }
+
+    div.introduction-text {
+      flex: 0 0 83.333333%;
+      max-width: 83.333333%;
     }
   }
 
@@ -258,6 +295,13 @@ footer#copyright {
   %fullWidth {
     width: 100%;
     float: none;
+  }
+
+  %resetForceFullWidth{
+    flex: auto;
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
   }
 
   header#sidebar {
@@ -296,7 +340,22 @@ footer#copyright {
   }
 
   section#introduction {
+
+    margin-top: 0;
     margin-bottom: 0;
+
+
+    div.topic {
+      @extend %resetForceFullWidth;
+    }
+
+    div.profile {
+      @extend %resetForceFullWidth;
+    }
+
+    div.introduction-text {
+      @extend %resetForceFullWidth;
+    }
 
     img.profile {
       position: relative;
@@ -304,10 +363,7 @@ footer#copyright {
     }
 
     div.topic {
-      text-align: left;
-
       h2.introduce {
-        width: 100%;
         font-size: 1.4em;
       }
     }
