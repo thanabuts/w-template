@@ -210,7 +210,10 @@ section#blog {
     margin: 1em 0;
 
     h5.card-title {
-      font-size: 0.9em;
+    font-size: 0.9em;
+      a{
+        color: $fontLinkHoverColour;
+      }
     }
 
     p.card-text {
