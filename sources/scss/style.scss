@@ -183,9 +183,9 @@ section#blog {
     text-align: center;
     margin-bottom: 2em;
 
-    &.text-left{
-      a.category-btn{
-        &:first-child{
+    &.text-left {
+      a.category-btn {
+        &:first-child {
           margin-left: 0 !important;
         }
       }
@@ -210,8 +210,9 @@ section#blog {
     margin: 1em 0;
 
     h5.card-title {
-    font-size: 0.9em;
-      a{
+      font-size: 0.9em;
+
+      a {
         color: $fontLinkHoverColour;
       }
     }
@@ -237,6 +238,99 @@ section#blog {
 
   div.content {
     font-size: 0.9em;
+  }
+}
+
+section#works {
+  h2.works {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2em;
+
+    span {
+      font-size: 0.5em;
+      padding: 0 0.2em;
+    }
+  }
+
+  p.description {
+    margin: 1.2em 0;
+    text-align: center;
+    font-size: 0.8em;
+    color: $fontFooterColour;
+  }
+
+  div.category {
+    text-align: center;
+    margin-bottom: 2em;
+
+    &.text-left {
+      a.category-btn {
+        &:first-child {
+          margin-left: 0 !important;
+        }
+      }
+    }
+
+    a.category-btn {
+      background-color: $primaryBackgroundColor;
+      padding: 0.4em 1em;
+      margin: 0.5em;
+      display: inline-block;
+      font-size: 0.8em;
+
+      &.active {
+        background-color: $fontColour;
+        color: $primaryBackgroundColor;
+      }
+    }
+  }
+
+  div.card {
+    @extend %none-radius;
+    margin: 1em 0;
+
+    h5.card-title {
+      font-size: 0.9em;
+
+      a {
+        color: $fontLinkHoverColour;
+      }
+    }
+
+    p.card-text {
+      color: $fontLinkColour;
+      font-size: 0.8em;
+    }
+
+    img.card-img-top {
+      @extend %none-radius;
+    }
+
+    div.card-footer {
+      background-color: $primaryBackgroundColor;
+
+      small.text-muted {
+        color: $fontLinkColour;
+        font-size: 0.8em;
+      }
+    }
+  }
+
+  .btn-loadmore {
+    @extend %none-radius;
+    margin-top: 2.5em;
+    padding: 1em 0;
+    width: 100%;
+    background-color: $primaryBackgroundColor;
+    text-transform: uppercase;
+    color: $fontLinkColour;
+    font-size: 0.9em;
+
+    &:hover {
+      background-color: $fontColour;
+      color: $primaryBackgroundColor;
+    }
   }
 }
 
@@ -306,6 +400,12 @@ footer#copyright {
   }
 
   section#blog {
+    div.category {
+      margin-bottom: 1.2em;
+    }
+  }
+
+  section#works {
     div.category {
       margin-bottom: 1.2em;
     }
@@ -394,6 +494,20 @@ footer#copyright {
 
   section#blog {
     h2.blog {
+      font-size: 1.4em;
+    }
+
+    div.category {
+      margin-bottom: 0;
+    }
+
+    div.card {
+      margin: 1.5em;
+    }
+  }
+
+  section#works {
+    h2.works {
       font-size: 1.4em;
     }
 
