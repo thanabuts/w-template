@@ -45,20 +45,20 @@ header#sidebar {
     h1.website-name {
       font-size: 1em;
       text-transform: uppercase;
-      letter-spacing: 0.15em;
+      letter-spacing: .15em;
       padding: 8em 20% 0 35%;
       margin: 0;
     }
 
     ul.navbar-nav {
-      padding: 0.8em 20% 0 35%;
+      padding: .8em 20% 0 35%;
       flex-direction: column;
 
       li.nav-item {
         a.nav-link {
           display: block;
-          padding: 0.5em 0 !important;
-          font-size: 0.9em;
+          padding: .5em 0 !important;
+          font-size: .9em;
 
           &.active {
             color: $fontLinkHoverColour !important;
@@ -70,7 +70,7 @@ header#sidebar {
 }
 
 p.text {
-  font-size: 0.9em;
+  font-size: .9em;
 }
 
 hr.split {
@@ -150,7 +150,7 @@ section#introduction {
       text-transform: uppercase;
       width: 6em;
       font-size: 2em;
-      margin-bottom: 0.6em;
+      margin-bottom: .6em;
     }
   }
 
@@ -167,15 +167,15 @@ section#blog {
     font-size: 2em;
 
     span {
-      font-size: 0.5em;
-      padding: 0 0.2em;
+      font-size: .5em;
+      padding: 0 .2em;
     }
   }
 
   p.description {
     margin: 1.2em 0;
     text-align: center;
-    font-size: 0.8em;
+    font-size: .8em;
     color: $fontFooterColour;
   }
 
@@ -193,10 +193,10 @@ section#blog {
 
     a.category-btn {
       background-color: $primaryBackgroundColor;
-      padding: 0.4em 1em;
-      margin: 0.5em;
+      padding: .4em 1em;
+      margin: .5em;
       display: inline-block;
-      font-size: 0.8em;
+      font-size: .8em;
 
       &.active {
         background-color: $fontColour;
@@ -210,7 +210,7 @@ section#blog {
     margin: 1em 0;
 
     h5.card-title {
-      font-size: 0.9em;
+      font-size: .9em;
 
       a {
         color: $fontLinkHoverColour;
@@ -219,7 +219,7 @@ section#blog {
 
     p.card-text {
       color: $fontLinkColour;
-      font-size: 0.8em;
+      font-size: .8em;
     }
 
     img.card-img-top {
@@ -231,13 +231,13 @@ section#blog {
 
       small.text-muted {
         color: $fontLinkColour;
-        font-size: 0.8em;
+        font-size: .8em;
       }
     }
   }
 
   div.content {
-    font-size: 0.9em;
+    font-size: .9em;
   }
 }
 
@@ -246,17 +246,12 @@ section#works {
     text-align: center;
     text-transform: uppercase;
     font-size: 2em;
-
-    span {
-      font-size: 0.5em;
-      padding: 0 0.2em;
-    }
   }
 
   p.description {
     margin: 1.2em 0;
     text-align: center;
-    font-size: 0.8em;
+    font-size: .8em;
     color: $fontFooterColour;
   }
 
@@ -274,10 +269,10 @@ section#works {
 
     a.category-btn {
       background-color: $primaryBackgroundColor;
-      padding: 0.4em 1em;
-      margin: 0.5em;
+      padding: .4em 1em;
+      margin: .5em;
       display: inline-block;
-      font-size: 0.8em;
+      font-size: .8em;
 
       &.active {
         background-color: $fontColour;
@@ -291,7 +286,7 @@ section#works {
     margin: 1em 0;
 
     h5.card-title {
-      font-size: 0.9em;
+      font-size: .9em;
 
       a {
         color: $fontLinkHoverColour;
@@ -300,7 +295,7 @@ section#works {
 
     p.card-text {
       color: $fontLinkColour;
-      font-size: 0.8em;
+      font-size: .8em;
     }
 
     img.card-img-top {
@@ -312,13 +307,13 @@ section#works {
 
       small.text-muted {
         color: $fontLinkColour;
-        font-size: 0.8em;
+        font-size: .8em;
       }
     }
   }
 
-  .loadmore {
-    .btn-loadmore {
+  div.loadmore {
+    button.btn-loadmore {
       @extend %none-radius;
       margin-top: 2.5em;
       padding: 1em 0;
@@ -326,7 +321,61 @@ section#works {
       background-color: $primaryBackgroundColor;
       text-transform: uppercase;
       color: $fontLinkColour;
-      font-size: 0.9em;
+      font-size: .9em;
+
+      &:hover {
+        background-color: $fontColour;
+        color: $primaryBackgroundColor;
+      }
+    }
+  }
+}
+
+section#contact {
+  h2.contact {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2em;
+  }
+
+  p.description {
+    margin: 1.2em 0;
+    text-align: center;
+    font-size: .8em;
+    color: $fontFooterColour;
+  }
+
+  form {
+    margin-top: 1em;
+
+    input.form-control,
+    textarea.form-control {
+      @extend %none-radius;
+      border-color: $primaryBackgroundColor;
+      background-color: $primaryBackgroundColor;
+      color: $fontLinkColour;
+      font-size: .9em;
+      padding: .9em;
+
+      &::placeholder {
+        font-size: .9em;
+        color: $fontLinkColour;
+        text-transform: uppercase;
+      }
+
+      &:focus {
+        box-shadow: none;
+      }
+    }
+
+    button.btn-sendmessage {
+      @extend %none-radius;
+      padding: 1em 0;
+      width: 100%;
+      background-color: $primaryBackgroundColor;
+      text-transform: uppercase;
+      color: $fontLinkColour;
+      font-size: .9em;
 
       &:hover {
         background-color: $fontColour;
@@ -347,7 +396,7 @@ footer#copyright {
   text-shadow: 0 1px 0 rgba(255,255,255,.8);
   padding: 1.2em 0;
   margin-top: 6.8em;
-  font-size: 0.9em;
+  font-size: .9em;
   text-align: center;
 }
 @media screen and (max-width: 991px) {
@@ -364,7 +413,7 @@ footer#copyright {
       }
 
       ul.navbar-nav {
-        padding: 0.8em 0 0 16%;
+        padding: .8em 0 0 16%;
       }
     }
   }
@@ -412,8 +461,8 @@ footer#copyright {
       margin-bottom: 1.2em;
     }
 
-    .loadmore {
-      .btn-loadmore {
+    div.loadmore {
+      button.btn-loadmore {
         margin-top: 1em;
         padding: 1em 2em;
       }
@@ -445,7 +494,7 @@ footer#copyright {
     }
 
     ul.navbar-nav {
-      padding: 0.8em 0 !important;
+      padding: .8em 0 !important;
 
       li.nav-item {
         border-top: 1px solid rgba(0,0,0,.1);
@@ -455,7 +504,7 @@ footer#copyright {
         }
 
         a.nav-link {
-          padding: 0.6em 0 !important;
+          padding: .6em 0 !important;
           font-size: 1em !important;
         }
       }
@@ -528,8 +577,14 @@ footer#copyright {
       margin: 1.5em;
     }
 
-    .loadmore {
+    div.loadmore {
       padding: 0 2.5em;
+    }
+  }
+
+  section#contact {
+    h2.contact {
+      font-size: 1.4em;
     }
   }
 
