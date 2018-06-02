@@ -45,20 +45,20 @@ header#sidebar {
     h1.website-name {
       font-size: 1em;
       text-transform: uppercase;
-      letter-spacing: .15em;
+      letter-spacing: 0.15em;
       padding: 8em 20% 0 35%;
       margin: 0;
     }
 
     ul.navbar-nav {
-      padding: .8em 20% 0 35%;
+      padding: 0.8em 20% 0 35%;
       flex-direction: column;
 
       li.nav-item {
         a.nav-link {
           display: block;
-          padding: .5em 0 !important;
-          font-size: .9em;
+          padding: 0.5em 0 !important;
+          font-size: 0.9em;
 
           &.active {
             color: $fontLinkHoverColour !important;
@@ -70,7 +70,7 @@ header#sidebar {
 }
 
 p.text {
-  font-size: .9em;
+  font-size: 0.9em;
 }
 
 hr.split {
@@ -150,7 +150,7 @@ section#introduction {
       text-transform: uppercase;
       width: 6em;
       font-size: 2em;
-      margin-bottom: .6em;
+      margin-bottom: 0.6em;
     }
   }
 
@@ -167,15 +167,15 @@ section#blog {
     font-size: 2em;
 
     span {
-      font-size: .5em;
-      padding: 0 .2em;
+      font-size: 0.5em;
+      padding: 0 0.2em;
     }
   }
 
   p.description {
     margin: 1.2em 0;
     text-align: center;
-    font-size: .8em;
+    font-size: 0.8em;
     color: $fontFooterColour;
   }
 
@@ -193,10 +193,10 @@ section#blog {
 
     a.category-btn {
       background-color: $primaryBackgroundColor;
-      padding: .4em 1em;
-      margin: .5em;
+      padding: 0.4em 1em;
+      margin: 0.5em;
       display: inline-block;
-      font-size: .8em;
+      font-size: 0.8em;
 
       &.active {
         background-color: $fontColour;
@@ -210,7 +210,7 @@ section#blog {
     margin: 1em 0;
 
     h5.card-title {
-      font-size: .9em;
+      font-size: 0.9em;
 
       a {
         color: $fontLinkHoverColour;
@@ -219,7 +219,7 @@ section#blog {
 
     p.card-text {
       color: $fontLinkColour;
-      font-size: .8em;
+      font-size: 0.8em;
     }
 
     img.card-img-top {
@@ -231,13 +231,13 @@ section#blog {
 
       small.text-muted {
         color: $fontLinkColour;
-        font-size: .8em;
+        font-size: 0.8em;
       }
     }
   }
 
   div.content {
-    font-size: .9em;
+    font-size: 0.9em;
   }
 }
 
@@ -251,7 +251,7 @@ section#works {
   p.description {
     margin: 1.2em 0;
     text-align: center;
-    font-size: .8em;
+    font-size: 0.8em;
     color: $fontFooterColour;
   }
 
@@ -269,10 +269,10 @@ section#works {
 
     a.category-btn {
       background-color: $primaryBackgroundColor;
-      padding: .4em 1em;
-      margin: .5em;
+      padding: 0.4em 1em;
+      margin: 0.5em;
       display: inline-block;
-      font-size: .8em;
+      font-size: 0.8em;
 
       &.active {
         background-color: $fontColour;
@@ -286,7 +286,7 @@ section#works {
     margin: 1em 0;
 
     h5.card-title {
-      font-size: .9em;
+      font-size: 0.9em;
 
       a {
         color: $fontLinkHoverColour;
@@ -295,7 +295,7 @@ section#works {
 
     p.card-text {
       color: $fontLinkColour;
-      font-size: .8em;
+      font-size: 0.8em;
     }
 
     img.card-img-top {
@@ -307,7 +307,7 @@ section#works {
 
       small.text-muted {
         color: $fontLinkColour;
-        font-size: .8em;
+        font-size: 0.8em;
       }
     }
   }
@@ -321,7 +321,7 @@ section#works {
       background-color: $primaryBackgroundColor;
       text-transform: uppercase;
       color: $fontLinkColour;
-      font-size: .9em;
+      font-size: 0.9em;
 
       &:hover {
         background-color: $fontColour;
@@ -341,7 +341,7 @@ section#contact {
   p.description {
     margin: 1.2em 0;
     text-align: center;
-    font-size: .8em;
+    font-size: 0.8em;
     color: $fontFooterColour;
   }
 
@@ -354,11 +354,11 @@ section#contact {
       border-color: $primaryBackgroundColor;
       background-color: $primaryBackgroundColor;
       color: $fontLinkColour;
-      font-size: .9em;
-      padding: .9em;
+      font-size: 0.9em;
+      padding: 0.9em;
 
       &::placeholder {
-        font-size: .9em;
+        font-size: 0.9em;
         color: $fontLinkColour;
         text-transform: uppercase;
       }
@@ -375,12 +375,42 @@ section#contact {
       background-color: $primaryBackgroundColor;
       text-transform: uppercase;
       color: $fontLinkColour;
-      font-size: .9em;
+      font-size: 0.9em;
 
       &:hover {
         background-color: $fontColour;
         color: $primaryBackgroundColor;
       }
+    }
+  }
+}
+
+section#error-404 {
+  h2.error-404 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2em;
+  }
+
+  p.description {
+    margin: 1.2em 0;
+    text-align: center;
+    font-size: 0.8em;
+    color: $fontFooterColour;
+  }
+
+  a.btn-home {
+    @extend %none-radius;
+    padding: 1em 0;
+    width: 100%;
+    background-color: $primaryBackgroundColor;
+    text-transform: uppercase;
+    color: $fontLinkColour;
+    font-size: 0.9em;
+
+    &:hover {
+      background-color: $fontColour;
+      color: $primaryBackgroundColor;
     }
   }
 }
@@ -396,7 +426,7 @@ footer#copyright {
   text-shadow: 0 1px 0 rgba(255,255,255,.8);
   padding: 1.2em 0;
   margin-top: 6.8em;
-  font-size: .9em;
+  font-size: 0.9em;
   text-align: center;
 }
 @media screen and (max-width: 991px) {
@@ -413,7 +443,7 @@ footer#copyright {
       }
 
       ul.navbar-nav {
-        padding: .8em 0 0 16%;
+        padding: 0.8em 0 0 16%;
       }
     }
   }
@@ -494,7 +524,7 @@ footer#copyright {
     }
 
     ul.navbar-nav {
-      padding: .8em 0 !important;
+      padding: 0.8em 0 !important;
 
       li.nav-item {
         border-top: 1px solid rgba(0,0,0,.1);
@@ -504,7 +534,7 @@ footer#copyright {
         }
 
         a.nav-link {
-          padding: .6em 0 !important;
+          padding: 0.6em 0 !important;
           font-size: 1em !important;
         }
       }
@@ -584,6 +614,12 @@ footer#copyright {
 
   section#contact {
     h2.contact {
+      font-size: 1.4em;
+    }
+  }
+
+  section#error-404 {
+    h2.error-404 {
       font-size: 1.4em;
     }
   }
